@@ -23,22 +23,23 @@ int *twoSum(int *nums, int numsSize, int target, int *returnSize)
             }
         }
     }
+    printf("[%d, %d]\n", result[0], result[1]);
     return result;
 }
 
 int main()
 {
     int nums[] = {2, 7, 11, 15};
-    int target = 26;
+    int target = 30;
 
     int returnSize;
 
     int *result = twoSum(nums, sizeof(nums) / sizeof(nums[0]), target, &returnSize);
 
-    if (result != NULL)
-    {
-        printf("[%d, %d]\n", result[0], result[1]);
-    }
+    // if (result != NULL)
+    // {
+    //     printf("[%d, %d]\n", result[0], result[1]);
+    // }
 
     free(result);
 

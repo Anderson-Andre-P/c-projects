@@ -9,7 +9,7 @@ typedef struct
 
 int *twoSum(int *nums, int numsSize, int target, int *returnSize)
 {
-    int *result = (int *)calloc(2, sizeof(int));
+    int *result = malloc(2 * sizeof(int));
     *returnSize = 2;
     for (int i = 0; i < numsSize; i++)
     {
@@ -36,12 +36,6 @@ int main()
 
     int *result = twoSum(nums, sizeof(nums) / sizeof(nums[0]), target, &returnSize);
 
-    // if (result != NULL)
-    // {
-    //     printf("[%d, %d]\n", result[0], result[1]);
-    // }
-
     free(result);
-
     return 0;
 }

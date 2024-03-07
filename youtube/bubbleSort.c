@@ -1,37 +1,40 @@
 #include <stdio.h>
+
 #define SIZE 10
 
 void bubbleSort(int *const array, const int size);
 
-int main(void)
+int main()
 {
-    int a[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 0}, i;
+    int a[SIZE] = {2, 6, 4, 8, 10, 12, 89, 68, 45, 37};
 
     printf("Itens of data in original order\n");
 
-    for (i = 0; i < SIZE; i++)
+    for (int i = 0; i < SIZE; i++)
     {
-        printf("%4d, %p\n", a[i], &a[i]);
+        // printf("%4d, %p\n", a[i], &a[i]);
+        printf("%4d", a[i]);
     }
+    puts("");
 
     bubbleSort(a, SIZE);
 
-    printf("\nIntens from array in order ascendent\n");
+    printf("Itens from array in order ascendent\n");
 
-    for (i = 0; i < SIZE; i++)
+    for (int i = 0; i < SIZE; i++)
     {
+        // printf("%4d, %p\n", a[i], &a[i]);
         printf("%4d", a[i]);
     }
+    puts("");
 
-    printf("\n");
     return 0;
 }
 
-void bubbleSort(int *const array, const int size)
+void bubbleSort(int *const array, int const size)
 {
     void swap(int *elementOnePtr, int *elementTwoPtr);
     int pass, j;
-
     for (pass = 0; pass < size - 1; pass++)
     {
         for (j = 0; j < size - 1; j++)
